@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace SnakeEyesGame.Models
 {
+    [JsonObject(MemberSerialization.OptIn)]
     public class SnakeEyes
     {
+        [JsonProperty]
         private Dice _eye1;
+        [JsonProperty]
         private Dice _eye2;
 
         public SnakeEyes()
@@ -18,6 +22,7 @@ namespace SnakeEyesGame.Models
 
         }
 
+        [JsonProperty]
         public int Total { get; private set; }
 
         public int Eye1 { get { return _eye1.Pips; } }

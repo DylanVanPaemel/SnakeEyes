@@ -26,7 +26,9 @@ namespace SnakeEyesGame.Controllers
 
         public IActionResult Play()
         {
+            _snakeEyes = JsonConvert.DeserializeObject<SnakeEyes>(HttpContext.Session.GetString("SnakeEye"));
             _snakeEyes.Play();
+            HttpContext.Session.SetString("SnakeEye",JsonConvert.SerializeObject(_snakeEyes));
             return View("Index",_snakeEyes);
         }
     }

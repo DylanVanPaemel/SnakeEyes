@@ -1,4 +1,5 @@
 ﻿@model SnakeEyesGame.Models.SnakeEyes
+@addTagHelper*,Mircosoft.aspNetCore.Mvc.Taghelpers
 <link href="~/css/SnakeEyes.css" rel="stylesheet" />
 <h1>SnakeEyes</h1>
 <p> keep going but don't get 2 one's</p>
@@ -10,3 +11,9 @@
 
 
 <p>Je totaal is @Model.Total</p>
+
+<form asp-controller="Home" asp-action="Play" method="post">
+    
+    <input id="buttonPlay" type="submit" value="Play"/>
+
+</form>
